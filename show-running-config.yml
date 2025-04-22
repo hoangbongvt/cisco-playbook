@@ -1,0 +1,15 @@
+---
+- name: Show running config from Cisco switch
+  hosts: cisco
+  gather_facts: no
+  connection: network_cli
+
+  tasks:
+    - name: Get running config
+      ios_command:
+        commands: show running-config
+      register: output
+
+    - name: Print output
+      debug:
+        var: output.stdout_lines
