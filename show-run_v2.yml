@@ -1,14 +1,8 @@
 ---
-- name: Show running configuration
-  hosts: all
+- name: Show version
+  hosts: 10.22.1.1
   gather_facts: no
   tasks:
-    - name: Run show running-config
+    - name: Run show version
       cisco.ios.ios_command:
-        commands:
-          - show running-config
-      register: show_run_output
-
-    - name: Display the running configuration output
-      debug:
-        var: show_run_output
+        commands: show version
