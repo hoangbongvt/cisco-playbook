@@ -4,7 +4,11 @@
   connection: network_cli
   gather_facts: no
   tasks:
-    - name: Run 'show version' command
+    - name: Run 'show version'
       cisco.ios.ios_command:
-        commands:
-          - show version
+        commands: show version
+      register: output
+
+    - name: Print output
+      debug:
+        var: output.stdout_lines
