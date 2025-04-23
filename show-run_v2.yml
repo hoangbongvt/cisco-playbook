@@ -2,6 +2,7 @@
 - name: Show running configuration
   hosts: 10.22.1.1
   gather_facts: no
+  connection: network_cli
   tasks:
     - name: Run show running-config
       cisco.ios.ios_command:
