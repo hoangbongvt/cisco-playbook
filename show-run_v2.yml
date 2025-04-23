@@ -4,7 +4,7 @@
   gather_facts: no
   connection: httpapi
   vars:
-    ansible_network_os: cisco.ios.ios
+    ansible_network_os: cisco.ios
   tasks:
     - name: Run show running-config
       cisco.ios.ios_command:
