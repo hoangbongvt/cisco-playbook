@@ -7,8 +7,3 @@
       cisco.ios.ios_command:
         commands:
           - show version
-      register: show_version_output
-
-    - name: Display version output
-      debug:
-        var: show_version_output.stdout_lines
