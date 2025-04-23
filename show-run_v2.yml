@@ -3,6 +3,12 @@
   hosts: 10.22.1.1
   gather_facts: no
   tasks:
-    - name: Run show version
+    - name: Run 'show version' command
       cisco.ios.ios_command:
-        commands: show version
+        commands:
+          - show version
+      register: show_version_output
+
+    - name: Display version output
+      debug:
+        var: show_version_output.stdout_lines
