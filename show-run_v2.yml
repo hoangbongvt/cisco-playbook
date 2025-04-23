@@ -2,7 +2,7 @@
 - name: Show running configuration
   hosts: all
   gather_facts: no
-  connection: network_cli
+  connection: httpapi
   vars:
     ansible_network_os: cisco.ios.ios
   tasks:
