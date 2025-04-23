@@ -1,6 +1,6 @@
 ---
 - name: Show running configuration
-  hosts: 10.22.1.1
+  hosts: all
   gather_facts: no
   connection: network_cli
   vars:
